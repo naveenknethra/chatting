@@ -1,0 +1,43 @@
+<br><br><br><br><br>
+<div id="myDiv" style="background-image:url('resources/images/download (15).jpg');background-repeat: no-repeat; 
+      background-size: cover;">
+<div class="container" ng-controller="FriendController as ctrl">
+
+     <p>
+     <p>
+     <p>
+     <p>
+     
+     <p>
+     <p>
+     <p>
+     <p>
+     
+     <div class="form-group has-feedback"></div>
+     
+     Search 
+
+     <input type="text" ng-model="sear_text">
+     
+     
+         <div ng-repeat="user in ctrl.users | filter: sear_text"  ng-hide="user.id==currentUser.id" && ng-hide="user.role=='admin'">
+         
+             <fieldset ng-show="user.status=='A'">
+                  <legend></legend>
+                  
+                  <p><h4> Online ?: {{user.isOnline}} </h4></p>
+                   
+                   <p><h4>ID: {{user.id}} &nbsp; &nbsp; &nbsp; Name: {{user.name}}
+                      &nbsp; &nbsp; &nbsp;  <button type="button" ng-click="ctrl.sendFriendRequest(user.id)" 
+                                                        
+                       class="btn btn-warning btn-sm">Send Friend Request</button>
+                    </h4></p>
+                    
+                   <p><h4>Email: {{user.email}} &nbsp; &nbsp; &nbsp; Mobile:{{user.mob_no}}</h4></p>
+                   
+                   <p><h4>Gender:{{user.gender}} &nbsp; &nbsp; &nbsp; Role:{{user.role}}</h4></p>
+                </fieldset>
+             </div>
+          </div>
+ <br><br><br><br><br><br><br><br><br><br>          
+     </div>                

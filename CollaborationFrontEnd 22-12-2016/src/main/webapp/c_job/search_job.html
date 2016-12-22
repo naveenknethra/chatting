@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+<br><br><br><br><br>
+<div id="myDiv" style="background-image:url('resources/images/download (12).jpg');background-repeat: no-repeat; 
+      background-size: cover;">
+<div class="container" ng-controller="JobController as ctrl">
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+
+<div class="form-group"></div>
+
+search for job
+
+<input type="text" ng-model="sear_text">
+
+<div ng-repeat="job in ctrl.jobs | filter:sear_text">
+
+<fieldset>
+<legend></legend>
+<p>
+<a href="#" ng-click="ctrl.getJobDetails(job.id)">Get Job Details</a>
+&nbsp;&nbsp;&nbsp;
+<button type="button" ng-click="ctrl.applyForJob(job.id)" class="btn btn-warning btn-sm">Apply for job</button>
+</p>
+<p><h4>ID:{{job.id}}</h4></p>
+<p><h4>Title:{{job.title}}</h4></p>
+<p><h4>Qualification:{{job.qualification}}</h4></p>
+</fieldset>
+</div></div>
+<br><br><br><br><br><br><br><br><br><br>
+</div>
+</body>
+</html>
